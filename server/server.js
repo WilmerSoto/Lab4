@@ -34,6 +34,6 @@ io.sockets.on("connection", (socket) =>{
 
     socket.on('clearCanvas', () => {
         socket.broadcast.emit('clearCanvas');
-        console.log("Eliminando canvas"); // Log inside the event listener function
+        console.log("Eliminando canvas");
     });
 });
