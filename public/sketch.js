@@ -17,6 +17,11 @@ function setup(){
 		line(data.x, data.y, data.px, data.py);
 	});
 
+    socket.on('clearCanvas', () => {
+        clear();
+        background(255);
+    });
+
     const colorPicker = select("#colorpicker");
     const clearBtn = select("#clearbtn");
     const downloadBtn = select("#downloadbtn");
@@ -25,7 +30,10 @@ function setup(){
     clearBtn.mousePressed(() => {
         clear();
         background(255);
+        socket.emit('clearCanvas');
+        console.log("clearCanvas emmited");
 	});
+
     downloadBtn.mousePressed(() =>{
         saveCanvas(canvas, "Mi canvas.jpg");
     });
@@ -64,3 +72,5 @@ function centerCanvas() {
 function changeColor(){
     color = this.value();
 }
+
+
