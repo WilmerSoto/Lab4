@@ -1,0 +1,16 @@
+html, body {
+    height: 100%;
+    background-color: #373d55;
+  }
+
+.text {
+    color: white;
+}
+
+.options{
+    float: left;
+}
+
+button{
+    margin-left: 10px;
+}

@@ -3,10 +3,10 @@ let socket;
 let canvas;
 
 function setup(){
-    const canvas = createCanvas(800, 600);
-    canvas.position(500, 50);
-    canvas.parent("canvas-container");
+    canvas = createCanvas(800, 600);
+    centerCanvas();
     background(255);
+    canvas.parent("canvas")
     canvas.style('border', '2px solid black');
 
     socket = io.connect("http://localhost:3000")
@@ -17,8 +17,18 @@ function setup(){
 		line(data.x, data.y, data.px, data.py);
 	});
 
-    let colorPicker = select("#colorpicker");
+    const colorPicker = select("#colorpicker");
+    const clearBtn = select("#clearbtn");
+    const downloadBtn = select("#downloadbtn");
+
     colorPicker.changed(changeColor);
+    clearBtn.mousePressed(() => {
+        clear();
+        background(255);
+	});
+    downloadBtn.mousePressed(() =>{
+        saveCanvas(canvas, "Mi canvas.jpg");
+    });
 }
 
 function mouseDragged(){

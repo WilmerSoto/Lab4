@@ -12,10 +12,14 @@
 </head>
 
 <body>
-  <div>
-    <label for="colorpicker">Cambiar color</label>
-    <input type="color" value="#000000" id="colorpicker" class="call-picker"/>
+  <div id ="canvas-container">
+    <div id = "canvas"></div>
+    <div class="options">
+        <label for="colorpicker" class="text">Cambiar color</label>
+        <input type="color" value="#000000" id="colorpicker" class="call-picker"/>
+        <button id="clearbtn">Limpiar canvas</button>
+        <button id="downloadbtn">Descargar imagen</button>
+    </div>
   </div>
-  <div id ="canvas-container"></div>
 </body>
 </html>
