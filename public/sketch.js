@@ -48,7 +48,6 @@ function mouseDragged(){
 
 function windowResized() {
 	centerCanvas()
-	canvas.resizeCanvas(windowWidth / 2, windowHeight / 2, false)
 }
 
 function sendMouse(x, y, pX, pY){
